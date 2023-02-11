@@ -11,6 +11,8 @@ const FeatureList = [
 
   {
     title: "",
+    img: "/img/gpc2024.png",
+    alt: "GPC logo",
     description: <></>,
   },
   {
@@ -20,11 +22,15 @@ const FeatureList = [
   },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ Svg, title, description, img, alt }) {
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center">
-        {Svg && <Svg className={styles.featureSvg} role="img" />}
+        {Svg ? (
+          <Svg className={styles.featureSvg} role="img" />
+        ) : img ? (
+          <img className={styles.featureImg} src={img} alt={alt ? alt : ""} />
+        ) : null}
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
