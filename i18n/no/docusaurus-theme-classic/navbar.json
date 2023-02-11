@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "GPC 2024",
+    "description": "The title in the navbar"
+  },
+  "item.label.Informasjon": {
+    "message": "Informasjon",
+    "description": "Navbar item with label Informasjon"
+  }
+}

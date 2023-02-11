@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Informasjon til GPC 2024",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Informasjon",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": " ",
+    "description": "The label for the left sidebar"
+  }
+}
