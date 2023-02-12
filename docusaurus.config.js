@@ -132,7 +132,7 @@ const config = {
           //   ],
           // },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Tjernstad Utvikling. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Glaamadalens Plastikbeholderes Søgeforæning. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
