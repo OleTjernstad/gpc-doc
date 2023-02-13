@@ -32,10 +32,3 @@ For stengte øvelser vil de være "deaktivert" i lista. Øvelsene vil ha forskje
 
 Kartet viser aktive øvelser, og andre veipunkter
 
-## Meldingssenter
-
-![meldingssenter](img/message.png)
-
-Det er satt opp et meldingssenter der lagene kan sende melding til oss arrangører. Dette er hvis de har spørsmål eller problemer med øvelser. Meningen er at de skal slippe å lete etter noen som kan svare.
-
-Vi som arrangører vil motta disse meldingene i slack, og vil også svare der.
