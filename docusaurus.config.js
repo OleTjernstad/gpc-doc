@@ -41,7 +41,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/Glaamadalen/gpc-doc/tree/master",
+          // editUrl: "https://github.com/Glaamadalen/gpc-doc/tree/master",
         },
         blog: {
           showReadingTime: false,
@@ -74,18 +74,18 @@ const config = {
           src: "img/logo.png",
         },
         items: [
-          // {
-          //   type: "doc",
-          //   docId: "intro",
-          //   position: "left",
-          //   label: "Tutorial",
-          // },
           { to: "/blog", label: "Informasjon", position: "left" },
-          // {
-          //   href: "https://github.com/facebook/docusaurus",
-          //   label: "GitHub",
-          //   position: "right",
-          // },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "Historien",
+          },
+          {
+            href: "https://www.facebook.com/groups/cachelekene",
+            label: "Facebook",
+            position: "right",
+          },
         ],
       },
       footer: {
