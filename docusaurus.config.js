@@ -75,11 +75,17 @@ const config = {
         },
         items: [
           { to: "/blog", label: "Informasjon", position: "left" },
+          { to: "/program", label: "Program", position: "left" },
           {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
             label: "Historien",
+          },
+          {
+            to: "/signup",
+            label: "Påmelding",
+            position: "right",
           },
           {
             href: "https://www.facebook.com/groups/cachelekene",
