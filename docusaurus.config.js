@@ -32,6 +32,8 @@ const config = {
     locales: ["no"],
   },
 
+  plugins: ["docusaurus-plugin-sass"],
+
   presets: [
     [
       "classic",
