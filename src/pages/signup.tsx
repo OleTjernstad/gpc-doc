@@ -1,29 +1,46 @@
 import React, { useState } from "react";
+import { TextArea, TextInput } from "../components/text-input";
 
 import { Button } from "../components/button";
 import Layout from "@theme/Layout";
-import { TextInput } from "../components/text-input";
 
 export default function Hello() {
   const [name, setName] = useState<string>("");
+  const [nameError, setNameError] = useState<"missing" | undefined>(undefined);
   const [email, setEmail] = useState<string>("");
+  const [emailError, setEmailError] = useState<"missing" | undefined>(
+    undefined
+  );
+  const [accommodation, setAccommodation] = useState<string>("");
+  const [members, setMembers] = useState<string>("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     console.log(e);
+    if (!name) setNameError("missing");
+
+    if (!email) setEmailError("missing");
+
+    if (emailError !== undefined || nameError !== undefined) {
+      setLoading(false);
+      return;
+    }
+
     const res = await fetch("http://localhost:8787", {
       body: JSON.stringify({
         email,
         name,
+        accommodation,
+        members,
       }),
       headers: {
         "Content-Type": "application/json",
       },
       method: "POST",
     });
-    const { error, success } = await res.json();
-    console.log(success);
+    const data = await res.json();
+    console.log(data);
     setLoading(false);
   }
 
@@ -61,6 +78,16 @@ export default function Hello() {
               value={name}
               onChange={setName}
             />
+            {nameError && nameError === "missing" ? (
+              <div
+                style={{
+                  color: "red",
+                  paddingBottom: 20,
+                }}
+              >
+                Lag navnet mangler
+              </div>
+            ) : null}
 
             <TextInput
               label="Epost (til lag ansvarlig)"
@@ -68,6 +95,30 @@ export default function Hello() {
               type="email"
               value={email}
               onChange={setEmail}
+            />
+            {emailError && emailError === "missing" ? (
+              <div
+                style={{
+                  color: "red",
+                  paddingBottom: 20,
+                }}
+              >
+                Epost mangler
+              </div>
+            ) : null}
+
+            <TextArea
+              label="Hvem er dere? List gjerne opp geocaching nickene"
+              name="members"
+              value={members}
+              onChange={setMembers}
+            />
+
+            <TextArea
+              label="Ønsker dere å overnatte på eventplassen? (Telt, Bobil)"
+              name="accommodation"
+              value={accommodation}
+              onChange={setAccommodation}
             />
 
             <Button
