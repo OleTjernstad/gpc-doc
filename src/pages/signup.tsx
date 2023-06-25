@@ -6,11 +6,14 @@ import Layout from "@theme/Layout";
 
 export default function Hello() {
   const [name, setName] = useState<string>("");
-  const [nameError, setNameError] = useState<"missing" | undefined>(undefined);
+  const [nameError, setNameError] = useState<
+    "missing" | "name_exits" | undefined
+  >(undefined);
   const [email, setEmail] = useState<string>("");
-  const [emailError, setEmailError] = useState<"missing" | undefined>(
-    undefined
-  );
+  const [emailError, setEmailError] = useState<
+    "missing" | "email_exits" | undefined
+  >(undefined);
+  const [success, setSuccess] = useState<boolean>(false);
   const [accommodation, setAccommodation] = useState<string>("");
   const [members, setMembers] = useState<string>("");
 
@@ -39,8 +42,18 @@ export default function Hello() {
       },
       method: "POST",
     });
+
     const data = await res.json();
     console.log(data);
+    if (res.status === 200) {
+      setSuccess(true);
+    }
+    if (data.message === "email_exits") {
+      setEmailError("email_exits");
+    }
+    if (data.message === "name_exits") {
+      setNameError("name_exits");
+    }
     setLoading(false);
   }
 
@@ -70,6 +83,13 @@ export default function Hello() {
           </p>
           <p>Vi anbefaler 2 - 5 personer pr lag.</p>
 
+          {success ? (
+            <p>
+              Takk for påmelding, dere vil motta en bekreftelse på mottatt
+              registering pr epost
+            </p>
+          ) : null}
+
           <hr />
           <form onSubmit={handleSubmit}>
             <TextInput
@@ -86,6 +106,15 @@ export default function Hello() {
                 }}
               >
                 Lag navnet mangler
+              </div>
+            ) : nameError === "name_exits" ? (
+              <div
+                style={{
+                  color: "red",
+                  paddingBottom: 20,
+                }}
+              >
+                Lag navnet er allerede registrert
               </div>
             ) : null}
 
@@ -104,6 +133,15 @@ export default function Hello() {
                 }}
               >
                 Epost mangler
+              </div>
+            ) : emailError === "email_exits" ? (
+              <div
+                style={{
+                  color: "red",
+                  paddingBottom: 20,
+                }}
+              >
+                Epost er allerede registrert
               </div>
             ) : null}
 
