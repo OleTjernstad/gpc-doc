@@ -53,14 +53,19 @@ export default function Hello() {
 
     const data = await res.json();
     console.log(data);
-    if (res.status === 200) {
-      setSuccess(true);
-    }
+
     if (data.message === "email_exits") {
       setEmailError("email_exits");
+      setLoading(false);
+      return;
     }
     if (data.message === "name_exits") {
       setNameError("name_exits");
+      setLoading(false);
+      return;
+    }
+    if (res.status === 200) {
+      setSuccess(true);
     }
     setLoading(false);
   }
