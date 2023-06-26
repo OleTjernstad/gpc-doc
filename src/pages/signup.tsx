@@ -3,6 +3,8 @@ import { TextArea, TextInput } from "../components/text-input";
 
 import { Button } from "../components/button";
 import Layout from "@theme/Layout";
+import clsx from "clsx";
+import styles from "./signup.module.css";
 
 export default function Hello() {
   const [name, setName] = useState<string>("");
@@ -20,6 +22,12 @@ export default function Hello() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+
+    setEmailError(undefined);
+    setNameError(undefined);
+
+    // reset when user retries
+    setSuccess(false);
     console.log(e);
     if (!name) setNameError("missing");
 
@@ -83,12 +91,7 @@ export default function Hello() {
           </p>
           <p>Vi anbefaler 2 - 5 personer pr lag.</p>
 
-          {success ? (
-            <p>
-              Takk for påmelding, dere vil motta en bekreftelse på mottatt
-              registering pr epost
-            </p>
-          ) : null}
+          {success ? <SuccessAlert /> : null}
 
           <hr />
           <form onSubmit={handleSubmit}>
@@ -168,5 +171,38 @@ export default function Hello() {
         </div>
       </div>
     </Layout>
+  );
+}
+
+function SuccessAlert() {
+  return (
+    <div className={clsx(styles.success, styles.alert)}>
+      <div className={styles.content}>
+        <div className={styles.icon}>
+          <svg
+            width="50"
+            height="50"
+            id="Layer_1"
+            // style={"enable-background:new 0 0 128 128;"}
+            version="1.1"
+            viewBox="0 0 128 128"
+          >
+            <g>
+              <circle fill="#fff" cx="64" cy="64" r="64" />
+            </g>
+            <g>
+              <path
+                fill="#3EBD61"
+                d="M54.3,97.2L24.8,67.7c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0L55,78.1l38.2-38.2   c0.4-0.4,1-0.4,1.4,0l8.5,8.5c0.4,0.4,0.4,1,0,1.4L55.7,97.2C55.3,97.6,54.7,97.6,54.3,97.2z"
+              />
+            </g>
+          </svg>
+        </div>
+        <p>
+          Takk for påmelding, dere vil motta en bekreftelse på mottatt
+          registering pr epost
+        </p>
+      </div>
+    </div>
   );
 }
