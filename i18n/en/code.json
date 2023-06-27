@@ -2,6 +2,9 @@
   "homepage.layout.description": {
     "message": "Information about Glaamadalens Plastikbeholderes Cacheleker 2024"
   },
+  "language": {
+    "message": "en"
+  },
   "signup.layout.title": {
     "message": "Enrollment"
   },

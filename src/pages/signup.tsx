@@ -45,6 +45,7 @@ export default function Hello() {
         name,
         accommodation,
         members,
+        language: translate({ id: "language", message: "no" }),
       }),
       headers: {
         "Content-Type": "application/json",
