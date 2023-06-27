@@ -13,7 +13,7 @@ const FeatureList = [
 
   {
     title: "",
-    img: "/img/gpc2024.png",
+    img: require("@site/static/img/gpc2024.png").default,
     alt: "GPC logo",
     description: <></>,
   },
