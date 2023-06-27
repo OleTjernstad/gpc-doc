@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TextArea, TextInput } from "../components/text-input";
+import Translate, { translate } from "@docusaurus/Translate";
 
 import { Button } from "../components/button";
 import Layout from "@theme/Layout";
@@ -73,7 +74,13 @@ export default function Hello() {
   const [loading, setLoading] = useState<boolean>(false);
 
   return (
-    <Layout title="Påmelding" description="Påmelding av lag til GPC 2024">
+    <Layout
+      title={translate({ id: "signup.layout.title", message: "Påmelding" })}
+      description={translate({
+        id: "signup.layout.description",
+        message: "Påmelding av lag til GPC 2024",
+      })}
+    >
       <div
         style={{
           paddingTop: 30,
@@ -88,20 +95,28 @@ export default function Hello() {
             maxWidth: "95vw",
           }}
         >
-          <h1>Påmelding til GPC 2024</h1>
+          <h1>
+            <Translate id="signup.title">Påmelding til GPC 2024</Translate>
+          </h1>
 
           <p>
-            Være med på GPC 2024, "The best games ever"? Meld på laget deres
-            her.
+            <Translate id="signup.invite">
+              Være med på GPC 2024, "The best games ever"? Meld på laget deres
+              her.
+            </Translate>
           </p>
-          <p>Vi anbefaler 2 - 5 personer pr lag.</p>
+          <p>
+            <Translate id="signup.members">
+              Vi anbefaler 2 - 5 personer pr lag.
+            </Translate>
+          </p>
 
           {success ? <SuccessAlert /> : null}
 
           <hr />
           <form onSubmit={handleSubmit}>
             <TextInput
-              label="Lag navn"
+              label={translate({ id: "signup.teamName", message: "Lag navn" })}
               name="teamName"
               value={name}
               onChange={setName}
@@ -113,7 +128,9 @@ export default function Hello() {
                   paddingBottom: 20,
                 }}
               >
-                Lag navnet mangler
+                <Translate id="signup.error.name-missing">
+                  Lag navnet mangler
+                </Translate>
               </div>
             ) : nameError === "name_exits" ? (
               <div
@@ -122,12 +139,17 @@ export default function Hello() {
                   paddingBottom: 20,
                 }}
               >
-                Lag navnet er allerede registrert
+                <Translate id="signup.error.name-exist">
+                  Lag navnet er allerede registrert
+                </Translate>
               </div>
             ) : null}
 
             <TextInput
-              label="Epost (til lag ansvarlig)"
+              label={translate({
+                id: "signup.email",
+                message: "Epost (til lag ansvarlig)",
+              })}
               name="email"
               type="email"
               value={email}
@@ -140,7 +162,9 @@ export default function Hello() {
                   paddingBottom: 20,
                 }}
               >
-                Epost mangler
+                <Translate id="signup.error.email-missing">
+                  Epost mangler
+                </Translate>
               </div>
             ) : emailError === "email_exits" ? (
               <div
@@ -149,26 +173,38 @@ export default function Hello() {
                   paddingBottom: 20,
                 }}
               >
-                Epost er allerede registrert
+                <Translate id="signup.error.name-exist">
+                  Epost er allerede registrert
+                </Translate>
               </div>
             ) : null}
 
             <TextArea
-              label="Hvem er dere? List gjerne opp geocaching nickene"
+              label={translate({
+                id: "signup.members",
+                message: "Hvem er dere? List gjerne opp geocaching nickene",
+              })}
               name="members"
               value={members}
               onChange={setMembers}
             />
 
             <TextArea
-              label="Ønsker dere å overnatte på eventplassen? (Telt, Bobil)"
+              label={translate({
+                id: "signup.accommodation",
+                message:
+                  "Ønsker dere å overnatte på eventplassen? (Telt, Bobil)",
+              })}
               name="accommodation"
               value={accommodation}
               onChange={setAccommodation}
             />
 
             <Button
-              label="Send inn påmelding"
+              label={translate({
+                id: "signup.submit",
+                message: "Send inn påmelding",
+              })}
               type="submit"
               loading={loading}
             />
@@ -204,8 +240,10 @@ function SuccessAlert() {
           </svg>
         </div>
         <p>
-          Takk for påmelding, dere vil motta en bekreftelse på mottatt
-          registering pr epost
+          <Translate id="signup.success">
+            Takk for påmelding, dere vil motta en bekreftelse på mottatt
+            registering pr epost
+          </Translate>
         </p>
       </div>
     </div>

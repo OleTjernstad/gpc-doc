@@ -1,4 +1,49 @@
 {
+  "homepage.layout.description": {
+    "message": "Information about Glaamadalens Plastikbeholderes Cacheleker 2024"
+  },
+  "signup.layout.title": {
+    "message": "Enrollment"
+  },
+  "signup.layout.description": {
+    "message": "Registration of teams for GPC 2024"
+  },
+  "signup.title": {
+    "message": "Registration for GPC 2024"
+  },
+  "signup.invite": {
+    "message": "Participate in GPC 2024, \"The best games ever\"? Register your team here."
+  },
+  "signup.members": {
+    "message": "Who are you? Feel free to list the geocaching nicks"
+  },
+  "signup.teamName": {
+    "message": "Team name"
+  },
+  "signup.error.name-missing": {
+    "message": "Team name is missing"
+  },
+  "signup.error.name-exist": {
+    "message": "Email is already registered"
+  },
+  "signup.email": {
+    "message": "Email (for team contact)"
+  },
+  "signup.error.email-missing": {
+    "message": "Email missing"
+  },
+  "signup.accommodation": {
+    "message": "Do you want to stay overnight at the event site? (Tent, RV)"
+  },
+  "signup.submit": {
+    "message": "Submit registration"
+  },
+  "signup.success": {
+    "message": "Thank you for signing up, you will receive a confirmation of received registration by email"
+  },
+  "homepage.feature.date": {
+    "message": "17.august 2024"
+  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -14,6 +59,10 @@
   "theme.NotFound.p2": {
     "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
     "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.admonition.note": {
     "message": "note",
@@ -34,10 +83,6 @@
   "theme.admonition.caution": {
     "message": "caution",
     "description": "The default label used for the Caution admonition (:::caution)"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Scroll back to top",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.title": {
     "message": "Archive",
