@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "GPC 2024",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "GPC logo Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Informasjon": {
+    "message": "Informasjon",
+    "description": "Navbar item with label Informasjon"
+  },
+  "item.label.Program": {
+    "message": "Program",
+    "description": "Navbar item with label Program"
+  },
+  "item.label.Historien": {
+    "message": "Historien",
+    "description": "Navbar item with label Historien"
+  },
+  "item.label.Påmelding": {
+    "message": "Påmelding",
+    "description": "Navbar item with label Påmelding"
+  },
+  "item.label.Facebook": {
+    "message": "Facebook",
+    "description": "Navbar item with label Facebook"
+  }
+}

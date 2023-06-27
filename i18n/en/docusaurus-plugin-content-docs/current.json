@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Historien om GPC": {
+    "message": "Historien om GPC",
+    "description": "The label for category Historien om GPC in sidebar tutorialSidebar"
+  }
+}

@@ -29,7 +29,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "no",
-    locales: ["no"],
+    locales: ["no", "en"],
   },
 
   plugins: ["docusaurus-plugin-sass"],
@@ -92,6 +92,10 @@ const config = {
           {
             href: "https://www.facebook.com/groups/cachelekene",
             label: "Facebook",
+            position: "right",
+          },
+          {
+            type: "localeDropdown",
             position: "right",
           },
         ],
