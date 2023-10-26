@@ -30,10 +30,6 @@
     "@tsconfig/docusaurus": "^1.0.7",
     "typescript": "^5.0.4"
   },
-  "browserslist": [
-    "defaults and fully supports es6-module",
-    "maintained node versions"
-  ],
   "engines": {
     "node": ">=16.14"
   }
