@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const oembed = require("@agentofuser/remark-oembed");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -41,6 +42,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: "https://github.com/Glaamadalen/gpc-doc/tree/master",
@@ -52,6 +54,7 @@ const config = {
           postsPerPage: "ALL",
           blogSidebarTitle: " ",
           blogSidebarCount: "ALL",
+          remarkPlugins: [oembed.default],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
