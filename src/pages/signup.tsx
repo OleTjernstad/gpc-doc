@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { TextArea, TextInput } from "../components/text-input";
 import Translate, { translate } from "@docusaurus/Translate";
 
 import { Button } from "../components/button";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
+import { injectTurnstileScript } from "../utils/inject";
 import styles from "./signup.module.css";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export default function Hello() {
+  const {
+    siteConfig: { customFields },
+  } = useDocusaurusContext();
+
   const [name, setName] = useState<string>("");
   const [nameError, setNameError] = useState<
     "missing" | "name_exits" | undefined
@@ -73,6 +79,10 @@ export default function Hello() {
   }
 
   const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    injectTurnstileScript();
+  }, []);
 
   return (
     <Layout
@@ -200,6 +210,12 @@ export default function Hello() {
               value={accommodation}
               onChange={setAccommodation}
             />
+
+            <div
+              className="cf-turnstile"
+              data-sitekey={customFields.turnstileSitekey}
+              // data-sitekey="3x00000000000000000000FF"
+            ></div>
 
             <Button
               label={translate({
