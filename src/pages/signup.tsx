@@ -35,7 +35,8 @@ export default function Hello() {
 
     // reset when user retries
     setSuccess(false);
-    console.log(e);
+
+    console.log(e.target["cf-turnstile-response"].value);
     if (!name) setNameError("missing");
 
     if (!email) setEmailError("missing");
