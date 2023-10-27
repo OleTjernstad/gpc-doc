@@ -14,17 +14,14 @@ export default function Hello() {
     siteConfig: { customFields },
   } = useDocusaurusContext();
 
-  const [name, setName] = useState<string>("");
   const [nameError, setNameError] = useState<
     "missing" | "name_exits" | undefined
   >(undefined);
-  const [email, setEmail] = useState<string>("");
+
   const [emailError, setEmailError] = useState<
     "missing" | "email_exits" | undefined
   >(undefined);
   const [success, setSuccess] = useState<boolean>(false);
-  const [accommodation, setAccommodation] = useState<string>("");
-  const [members, setMembers] = useState<string>("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -36,12 +33,28 @@ export default function Hello() {
     // reset when user retries
     setSuccess(false);
 
-    console.log(e.target["cf-turnstile-response"].value);
-    if (!name) setNameError("missing");
+    const name = e.target["teamName"].value as string;
+    const email = e.target["email"].value as string;
+    const accommodation = e.target["accommodation"].value;
+    const members = e.target["members"].value;
+    const turnstileResponse = e.target["cf-turnstile-response"].value as string;
 
-    if (!email) setEmailError("missing");
+    console.log({ name, email, accommodation, members, turnstileResponse });
 
-    if (emailError !== undefined || nameError !== undefined) {
+    if (turnstileResponse.length < 1) {
+      console.log("abort");
+      setLoading(false);
+      return;
+    }
+
+    if (name.length < 1) {
+      setNameError("missing");
+      setLoading(false);
+      return;
+    }
+
+    if (email.length < 1) {
+      setEmailError("missing");
       setLoading(false);
       return;
     }
@@ -53,6 +66,7 @@ export default function Hello() {
         accommodation,
         members,
         language: translate({ id: "language", message: "no" }),
+        turnstileResponse,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -130,8 +144,6 @@ export default function Hello() {
             <TextInput
               label={translate({ id: "signup.teamName", message: "Lag navn" })}
               name="teamName"
-              value={name}
-              onChange={setName}
             />
             {nameError && nameError === "missing" ? (
               <div
@@ -164,8 +176,6 @@ export default function Hello() {
               })}
               name="email"
               type="email"
-              value={email}
-              onChange={setEmail}
             />
             {emailError && emailError === "missing" ? (
               <div
@@ -197,8 +207,6 @@ export default function Hello() {
                 message: "Hvem er dere? List gjerne opp geocaching nickene",
               })}
               name="members"
-              value={members}
-              onChange={setMembers}
             />
 
             <TextArea
@@ -208,8 +216,6 @@ export default function Hello() {
                   "Ønsker dere å overnatte på eventplassen? (Telt, Bobil)",
               })}
               name="accommodation"
-              value={accommodation}
-              onChange={setAccommodation}
             />
 
             <div
