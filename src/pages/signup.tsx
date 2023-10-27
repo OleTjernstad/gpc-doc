@@ -87,6 +87,10 @@ export default function Hello() {
       setLoading(false);
       return;
     }
+    if (data.declined) {
+      setLoading(false);
+      return;
+    }
     if (res.status === 200) {
       setSuccess(true);
     }
