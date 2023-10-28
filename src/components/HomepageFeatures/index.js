@@ -1,3 +1,5 @@
+import Translate, { translate } from "@docusaurus/Translate";
+
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
@@ -11,14 +13,16 @@ const FeatureList = [
 
   {
     title: "",
-    img: "/img/gpc2024.png",
+    img: require("@site/static/img/gpc2024.png").default,
     alt: "GPC logo",
     description: <></>,
   },
   {
     title: "Dato",
     Svg: require("@site/static/img/undraw_booking_re_gw4j.svg").default,
-    description: <>17.august 2024</>,
+    description: (
+      <Translate id="homepage.feature.date">17.august 2024</Translate>
+    ),
   },
 ];
 

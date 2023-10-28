@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import React from "react";
 import clsx from "clsx";
 import styles from "./index.module.css";
+import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 function HomepageHeader() {
@@ -30,7 +31,11 @@ export default function Home() {
   return (
     <Layout
       title={siteConfig.title}
-      description="Informasjon om Glaamadalens Plastikbeholderes Cacheleker 2024"
+      description={translate({
+        id: "homepage.layout.description",
+        message:
+          "Informasjon om Glaamadalens Plastikbeholderes Cacheleker 2024",
+      })}
     >
       <HomepageHeader />
       <main>

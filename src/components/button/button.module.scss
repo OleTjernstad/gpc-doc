@@ -1,0 +1,66 @@
+
+.input-container {
+    width: auto;
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+    button {
+        /* remove default behavior */
+        appearance: none;
+        margin: 10px 0; // add top and bottom margin
+        /* usual styles */
+        padding: 10px;
+        border: none;
+        background-color: var(--ifm-color-primary);
+
+        font-weight: 600;
+        border-radius: 5px;
+        width: 100%;
+        box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+        background-color: var(--ifm-color-primary-dark);
+    }
+
+    button:focus {
+        background-color: var(--ifm-color-primary-dark);
+       
+    }
+    
+
+}
+
+
+.loader {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    display: block;
+    margin: 1px auto;
+    position: relative;
+    background: var(--ifm-color-primary-darkest);
+    box-shadow: -24px 0 var(--ifm-color-primary-darkest), 24px 0 var(--ifm-color-primary-darkest);
+    box-sizing: border-box;
+    animation: shadowPulse 2s linear infinite;
+}
+
+@keyframes shadowPulse {
+    33% {
+        background: var(--ifm-color-primary-darkest);
+        box-shadow: -24px 0 var(--ifm-color-primary-darker), 24px 0 var(--ifm-color-primary-darkest);
+    }
+
+    66% {
+        background: var(--ifm-color-primary-darker);
+        box-shadow: -24px 0 var(--ifm-color-primary-darkest), 24px 0 var(--ifm-color-primary-darkest);
+    }
+
+    100% {
+        background: var(--primary-tint-90);
+        box-shadow: -24px 0 var(--primary-tint-90), 24px 0 var(--primary-shade-80);
+    }
+}

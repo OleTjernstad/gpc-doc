@@ -1,5 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+require("dotenv").config();
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
@@ -30,10 +31,15 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "no",
-    locales: ["no"],
+    locales: ["no", "en"],
   },
 
   plugins: ["docusaurus-plugin-sass"],
+  customFields: {
+    // Put your custom environment here
+    turnstileSitekey: process.env.TS_Sitekey,
+    cfUrl: process.env.CF_URL,
+  },
 
   presets: [
     [
@@ -95,6 +101,10 @@ const config = {
           {
             href: "https://www.facebook.com/groups/cachelekene",
             label: "Facebook",
+            position: "right",
+          },
+          {
+            type: "localeDropdown",
             position: "right",
           },
         ],
