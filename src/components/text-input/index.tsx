@@ -35,17 +35,12 @@ export function TextInput({
 
 interface TextAreaProps {
   name: string;
-
+  disabled?: boolean;
   label: string;
   required?: boolean;
 }
 
-export function TextArea({
-  name,
-
-  label,
-  required,
-}: TextAreaProps) {
+export function TextArea({ name, disabled, label, required }: TextAreaProps) {
   return (
     <div className={styles["input-container"]}>
       <label className="label" htmlFor={name} id={`label-${name}`}>
@@ -56,6 +51,7 @@ export function TextArea({
         name={name}
         aria-labelledby={`label-${name}`}
         required={required}
+        disabled={disabled}
       ></textarea>
     </div>
   );

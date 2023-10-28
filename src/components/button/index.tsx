@@ -6,12 +6,19 @@ interface ButtonProps {
   onClick?: () => void;
   label: string;
   loading?: boolean;
+  disabled?: boolean;
 }
 
-export function Button({ label, onClick, type, loading }: ButtonProps) {
+export function Button({
+  label,
+  onClick,
+  type,
+  loading,
+  disabled,
+}: ButtonProps) {
   return (
     <div className={styles["input-container"]}>
-      <button type={type}>
+      <button type={type} disabled={disabled}>
         {loading ? <div className={styles.loader}></div> : label}
       </button>
     </div>

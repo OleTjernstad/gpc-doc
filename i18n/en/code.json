@@ -17,6 +17,9 @@
   "signup.invite": {
     "message": "Participate in GPC 2024, \"The best games ever\"? Register your team here."
   },
+  "signup.closed": {
+    "message": "Registration has not opened, will open at the beginning of 2024"
+  },
   "signup.members": {
     "message": "Who are you? Feel free to list the geocaching nicks"
   },

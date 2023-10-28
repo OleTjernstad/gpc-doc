@@ -9,6 +9,7 @@ import { injectTurnstileScript } from "../utils/inject";
 import styles from "./signup.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
+const disabled = true;
 export default function Hello() {
   const {
     siteConfig: { customFields },
@@ -38,8 +39,6 @@ export default function Hello() {
     const accommodation = e.target["accommodation"].value;
     const members = e.target["members"].value;
     const turnstileResponse = e.target["cf-turnstile-response"].value as string;
-
-    console.log({ name, email, accommodation, members, turnstileResponse });
 
     if (turnstileResponse.length < 1) {
       console.log("abort");
@@ -75,7 +74,6 @@ export default function Hello() {
     });
 
     const data = await res.json();
-    console.log(data);
 
     if (data.message === "email_exits") {
       setEmailError("email_exits");
@@ -130,11 +128,21 @@ export default function Hello() {
           </h1>
 
           <p>
-            <Translate id="signup.invite">
-              Være med på GPC 2024, "The best games ever"? Meld på laget deres
-              her.
-            </Translate>
+            <strong>
+              <Translate id="signup.closed">
+                Påmeldingen er ikke åpnet, vil åpne i starten av 2024
+              </Translate>
+            </strong>
           </p>
+          <p>
+            <s>
+              <Translate id="signup.invite">
+                Være med på GPC 2024, "The best games ever"? Meld på laget deres
+                her.
+              </Translate>
+            </s>
+          </p>
+
           <p>
             <Translate id="signup.members">
               Vi anbefaler 2 - 5 personer pr lag.
@@ -148,6 +156,7 @@ export default function Hello() {
             <TextInput
               label={translate({ id: "signup.teamName", message: "Lag navn" })}
               name="teamName"
+              disabled
             />
             {nameError && nameError === "missing" ? (
               <div
@@ -180,6 +189,7 @@ export default function Hello() {
               })}
               name="email"
               type="email"
+              disabled
             />
             {emailError && emailError === "missing" ? (
               <div
@@ -211,6 +221,7 @@ export default function Hello() {
                 message: "Hvem er dere? List gjerne opp geocaching nickene",
               })}
               name="members"
+              disabled
             />
 
             <TextArea
@@ -220,6 +231,7 @@ export default function Hello() {
                   "Ønsker dere å overnatte på eventplassen? (Telt, Bobil)",
               })}
               name="accommodation"
+              disabled
             />
 
             <div
@@ -229,6 +241,7 @@ export default function Hello() {
             ></div>
 
             <Button
+              disabled
               label={translate({
                 id: "signup.submit",
                 message: "Send inn påmelding",
