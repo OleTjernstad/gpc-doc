@@ -38,6 +38,7 @@ const config = {
   customFields: {
     // Put your custom environment here
     turnstileSitekey: process.env.TS_Sitekey,
+    cfUrl: process.env.CF_URL,
   },
 
   presets: [

@@ -58,7 +58,7 @@ export default function Hello() {
       return;
     }
 
-    const res = await fetch("http://localhost:8787", {
+    const res = await fetch(customFields.cfUrl as string, {
       body: JSON.stringify({
         email,
         name,
@@ -237,7 +237,6 @@ export default function Hello() {
             <div
               className="cf-turnstile"
               data-sitekey={customFields.turnstileSitekey}
-              // data-sitekey="3x00000000000000000000FF"
             ></div>
 
             <Button
