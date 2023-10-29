@@ -95,7 +95,7 @@ const config = {
           },
           {
             to: "/signup",
-            label: "Påmelding",
+            label: "Lag registrering",
             position: "right",
           },
           {
