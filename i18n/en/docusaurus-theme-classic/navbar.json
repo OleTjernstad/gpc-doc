@@ -19,7 +19,7 @@
     "message": "The story",
     "description": "Navbar item with label Historien"
   },
-  "item.label.Påmelding": {
+  "item.label.Lag registrering": {
     "message": "Team registration",
     "description": "Navbar item with label Påmelding"
   },
