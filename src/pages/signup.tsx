@@ -38,7 +38,7 @@ export default function Hello() {
     const email = e.target["email"].value as string;
     const accommodation = e.target["accommodation"].value;
     const members = e.target["members"].value;
-    const turnstileResponse = e.target["cf-turnstile-response"].value as string;
+    const turnstileResponse = e.target["cf-turnstile-response"]?.value ?? "";
 
     if (turnstileResponse.length < 1) {
       console.log("abort");
@@ -156,7 +156,7 @@ export default function Hello() {
             <TextInput
               label={translate({ id: "signup.teamName", message: "Lag navn" })}
               name="teamName"
-              disabled
+              disabled={disabled}
             />
             {nameError && nameError === "missing" ? (
               <div
@@ -189,7 +189,7 @@ export default function Hello() {
               })}
               name="email"
               type="email"
-              disabled
+              disabled={disabled}
             />
             {emailError && emailError === "missing" ? (
               <div
@@ -221,7 +221,7 @@ export default function Hello() {
                 message: "Hvem er dere? List gjerne opp geocaching nickene",
               })}
               name="members"
-              disabled
+              disabled={disabled}
             />
 
             <TextArea
@@ -231,7 +231,7 @@ export default function Hello() {
                   "Ønsker dere å overnatte på eventplassen? (Telt, Bobil)",
               })}
               name="accommodation"
-              disabled
+              disabled={disabled}
             />
 
             <div
@@ -240,7 +240,7 @@ export default function Hello() {
             ></div>
 
             <Button
-              disabled
+              disabled={disabled}
               label={translate({
                 id: "signup.submit",
                 message: "Send inn påmelding",
