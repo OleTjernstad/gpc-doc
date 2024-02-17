@@ -6,5 +6,9 @@
   "sidebar.tutorialSidebar.category.Historien om GPC": {
     "message": "Historien om GPC",
     "description": "The label for category Historien om GPC in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.The history of GPC": {
+    "message": "The history of GPC",
+    "description": "The label for category The history of GPC in sidebar tutorialSidebar"
   }
 }
