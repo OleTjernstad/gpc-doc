@@ -9,7 +9,7 @@ import { injectTurnstileScript } from "../utils/inject";
 import styles from "./signup.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-const disabled = true;
+const disabled = false;
 export default function Hello() {
   const {
     siteConfig: { customFields },
