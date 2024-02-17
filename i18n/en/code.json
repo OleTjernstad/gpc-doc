@@ -44,6 +44,9 @@
   "signup.submit": {
     "message": "Submit registration"
   },
+  "signup.submitted": {
+    "message": "Submitted successfully"
+  },
   "signup.success": {
     "message": "Thank you for signing up, you will receive a confirmation of received registration by email"
   },

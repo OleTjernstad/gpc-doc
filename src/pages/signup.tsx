@@ -9,7 +9,7 @@ import { injectTurnstileScript } from "../utils/inject";
 import styles from "./signup.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-const disabled = true;
+const disabled = false;
 export default function Hello() {
   const {
     siteConfig: { customFields },
@@ -128,19 +128,10 @@ export default function Hello() {
           </h1>
 
           <p>
-            <strong>
-              <Translate id="signup.closed">
-                Påmeldingen er ikke åpnet, vil åpne i starten av 2024
-              </Translate>
-            </strong>
-          </p>
-          <p>
-            <s>
-              <Translate id="signup.invite">
-                Være med på GPC 2024, "The best games ever"? Meld på laget deres
-                her.
-              </Translate>
-            </s>
+            <Translate id="signup.invite">
+              Være med på GPC 2024, "The best games ever"? Meld på laget deres
+              her.
+            </Translate>
           </p>
 
           <p>
@@ -238,16 +229,27 @@ export default function Hello() {
               className="cf-turnstile"
               data-sitekey={customFields.turnstileSitekey}
             ></div>
-
-            <Button
-              disabled={disabled}
-              label={translate({
-                id: "signup.submit",
-                message: "Send inn påmelding",
-              })}
-              type="submit"
-              loading={loading}
-            />
+            {success ? (
+              <Button
+                disabled={true}
+                label={translate({
+                  id: "signup.submitted",
+                  message: "Sending vellykket",
+                })}
+                type="submit"
+                loading={loading}
+              />
+            ) : (
+              <Button
+                disabled={disabled}
+                label={translate({
+                  id: "signup.submit",
+                  message: "Send inn påmelding",
+                })}
+                type="submit"
+                loading={loading}
+              />
+            )}
           </form>
         </div>
       </div>
