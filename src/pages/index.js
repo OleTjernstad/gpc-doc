@@ -17,6 +17,7 @@ function HomepageHeader() {
           <a
             className="button button--secondary button--lg"
             href="https://gc.link/GCAE3NN"
+            rel="noopener noreferrer"
           >
             ✨GCAE3NN ✨
           </a>
