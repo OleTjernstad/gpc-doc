@@ -1,0 +1,12 @@
+.typeImageContainer {
+  width: 50px;
+}
+
+.exerciseTypeContainer {
+  display: flex;
+  flex-direction: row;
+
+  .typeImageContainer {
+    margin-right: 5px;
+  }
+}
