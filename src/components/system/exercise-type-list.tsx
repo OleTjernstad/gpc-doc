@@ -1,37 +1,54 @@
 import styles from "./styles.module.css";
 
-interface ExerciseTypeListProps {}
+interface ExerciseTypeListProps {
+  lng?: "en";
+}
 
-export function ExerciseTypeList({}: ExerciseTypeListProps) {
+export function ExerciseTypeList({ lng }: ExerciseTypeListProps) {
   return (
     <ul>
       <ExerciseType
-        description="Øvelse løses på tid, OBS!! kan være maks tid for utførelse"
+        description={
+          lng === "en"
+            ? "Exercise is solved with a timer, ATTENTION!! may be maximum time for execution"
+            : "Øvelse løses på tid, OBS!! kan være maks tid for utførelse"
+        }
         img={require("@site/static/img/time.png").default}
       />
       <ExerciseType
-        description="Gjettelek, komme nærmest mulig"
-        img={require("@site/static/img/guess.png").default}
-      />
-      <ExerciseType
-        description="Gjennomføre øvelsen på samme tid som oss"
+        description={
+          lng === "en"
+            ? "Carry out the exercise at the same time as us"
+            : "Gjennomføre øvelsen på samme tid som oss"
+        }
         img={require("@site/static/img/ideal-time.png").default}
       />
       <ExerciseType
-        description="Øvelser som kan måles i lengde"
+        description={lng === "en" ? "Guessing game" : "Gjettelek"}
+        img={require("@site/static/img/guess.png").default}
+      />
+
+      <ExerciseType
+        description={
+          lng === "en"
+            ? "Exercises that can be measured in length"
+            : "Øvelser som kan måles i lengde"
+        }
         img={require("@site/static/img/length.png").default}
       />
       <ExerciseType
-        description="Øvelser gir poeng"
+        description={
+          lng === "en" ? "Exercises that give points" : "Øvelser som gir poeng"
+        }
         img={require("@site/static/img/points.png").default}
       />
       <ExerciseType
-        description="Øvelser som går på tid, poeng telles automatisk ved scanning av QR koder"
+        description={
+          lng === "en"
+            ? "Timed exercises, points are counted automatically by scanning QR codes"
+            : "Øvelser som går på tid, poeng telles automatisk ved scanning av QR koder"
+        }
         img={require("@site/static/img/points-max-time.png").default}
-      />
-      <ExerciseType
-        description="Øvelser som gjøres på tid, start og stopp med QR koder"
-        img={require("@site/static/img/time.png").default}
       />
     </ul>
   );
