@@ -1,6 +1,7 @@
 .exerciseTypeContainer {
   display: flex;
   flex-direction: row;
+  width: 100%;
 
   @media screen and (max-width: 900px) {
     flex-direction: column;
