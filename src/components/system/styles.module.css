@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: row;
 
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+
   .typeImageContainer {
     margin-right: 8px;
     width: 50px !important;
