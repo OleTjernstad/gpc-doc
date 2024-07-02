@@ -7,7 +7,7 @@ interface ExerciseTypeListProps {
 export function ExerciseTypeList({ lng }: ExerciseTypeListProps) {
   return (
     <ul>
-      <ExerciseType
+      <TypeItem
         description={
           lng === "en"
             ? "Exercise is solved with a timer, ATTENTION!! may be maximum time for execution"
@@ -15,7 +15,7 @@ export function ExerciseTypeList({ lng }: ExerciseTypeListProps) {
         }
         img={require("@site/static/img/time.png").default}
       />
-      <ExerciseType
+      <TypeItem
         description={
           lng === "en"
             ? "Carry out the exercise at the same time as us"
@@ -23,12 +23,12 @@ export function ExerciseTypeList({ lng }: ExerciseTypeListProps) {
         }
         img={require("@site/static/img/ideal-time.png").default}
       />
-      <ExerciseType
+      <TypeItem
         description={lng === "en" ? "Guessing game" : "Gjettelek"}
         img={require("@site/static/img/guess.png").default}
       />
 
-      <ExerciseType
+      <TypeItem
         description={
           lng === "en"
             ? "Exercises that can be measured in length"
@@ -36,13 +36,13 @@ export function ExerciseTypeList({ lng }: ExerciseTypeListProps) {
         }
         img={require("@site/static/img/length.png").default}
       />
-      <ExerciseType
+      <TypeItem
         description={
           lng === "en" ? "Exercises that give points" : "Øvelser som gir poeng"
         }
         img={require("@site/static/img/points.png").default}
       />
-      <ExerciseType
+      <TypeItem
         description={
           lng === "en"
             ? "Timed exercises, points are counted automatically by scanning QR codes"
@@ -54,11 +54,11 @@ export function ExerciseTypeList({ lng }: ExerciseTypeListProps) {
   );
 }
 
-interface ExerciseTypeProps {
+interface TypeItemProps {
   img: string;
   description: string;
 }
-function ExerciseType({ description, img }: ExerciseTypeProps) {
+export function TypeItem({ description, img }: TypeItemProps) {
   return (
     <li className={styles.exerciseTypeContainer}>
       <div className={styles.typeImageContainer}>
