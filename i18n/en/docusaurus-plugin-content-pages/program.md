@@ -4,7 +4,7 @@
 - 10:30 - We give a quick review of how things work and you can ask questions and get help with logging in etc.
 - 11:00 - The event starts and the exercises open.
 - 11:00 - 18:00 - The kiosk, shops and stands are open.
-- 14:00. 14:30 - Break, we get a nice surprise visit! Just to enjoy!
+- 13:30. 14:30 - Break, we get a nice surprise visit! Just to enjoy!
   - All other exercises close while this is in progress.
 - 14:30 The exercises will be opened again
 - 17:00 – All exercises end at exactly five o'clock.

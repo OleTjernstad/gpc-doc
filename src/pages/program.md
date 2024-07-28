@@ -4,7 +4,7 @@
 - 10:30 – Vi gir en rask gjennomgang av hvordan ting fungerer og du kan stille spørsmål og få hjelp til innlogging osv.
 - 11:00 – Eventet starter og øvelsene åpner.
 - 11:00 - 18:00 - Kiosken er åpen, butikker og stands er åpne.
-- 14:00 . 14:30 - Pauseinnslag, vi får fint overraskelses-besøk! Bare å glede seg!
+- 13:30 . 14:30 - Pauseinnslag, vi får fint overraskelses-besøk! Bare å glede seg!
   - Alle andre øvelser stenger mens dette pågår.
 - 14:30 Øvelsene blir åpnet igjen
 - 17:00 – Alle øvelser avslutter eksakt klokken fem.
