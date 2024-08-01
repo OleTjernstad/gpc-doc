@@ -13,7 +13,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://gpc-doc.onrender.com",
+  url: "https://gpc.glaamadalen.no",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -96,6 +96,11 @@ const config = {
           {
             to: "/signup",
             label: "Lag registrering",
+            position: "right",
+          },
+          {
+            href: "https://24.glaamadalen.no/no/auth/login",
+            label: "Logg inn til lekene",
             position: "right",
           },
           {

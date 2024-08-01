@@ -23,6 +23,10 @@
     "message": "Team registration",
     "description": "Navbar item with label Lag registrering"
   },
+  "item.label.Logg inn til lekene": {
+    "message": "Login",
+    "description": "Navbar item with label Logg inn til lekene"
+  },
   "item.label.Facebook": {
     "message": "Facebook",
     "description": "Navbar item with label Facebook"
