@@ -93,16 +93,11 @@ const config = {
             position: "left",
             label: "Historien",
           },
-          {
-            to: "/signup",
-            label: "Lag registrering",
-            position: "right",
-          },
-          {
-            href: "https://24.glaamadalen.no/no/auth/login",
-            label: "Logg inn til lekene",
-            position: "right",
-          },
+          // {
+          //   to: "/signup",
+          //   label: "Lag registrering",
+          //   position: "right",
+          // },
           {
             href: "https://www.facebook.com/groups/cachelekene",
             label: "Facebook",
