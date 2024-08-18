@@ -9,7 +9,7 @@ const oembed = require("@agentofuser/remark-oembed");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Glaamadalens Plastikbeholderes Cacheleker",
-  tagline: "2024",
+  tagline: "202?",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -55,7 +55,7 @@ const config = {
         },
         blog: {
           showReadingTime: false,
-          blogTitle: "Informasjon til GPC 2024",
+          blogTitle: "Informasjon til GPC 202?",
           // blogDescription: "A Docusaurus powered blog!",
           postsPerPage: "ALL",
           blogSidebarTitle: " ",
@@ -79,7 +79,7 @@ const config = {
       // Replace with your project's social card
       image: "img/gpc2024.png",
       navbar: {
-        title: "GPC 2024",
+        title: "GPC 202?",
         logo: {
           alt: "GPC logo Logo",
           src: "img/logo.png",
